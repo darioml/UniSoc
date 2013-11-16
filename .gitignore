@@ -3,3 +3,5 @@ composer.phar
 resources/cache/
 .htaccess
 resources/log/
+*.DS_Store
+
