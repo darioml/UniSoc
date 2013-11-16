@@ -14,38 +14,33 @@
 
     <meta name="viewport" content="width=device-width">
 
-    <link rel="stylesheet" href="{{ app.request.basepath }}/assets/css/styles.css">
+    <link rel="stylesheet" href="{{ app.request.basepath }}/assets/css/semantic.min.css">
+    <link rel="stylesheet" href="{{ app.request.basepath }}/assets/css/main.css">
 
-    <script src="{{ app.request.basepath }}/js/libs/modernizr-2.5.3-respond-1.1.0.min.js"></script>
 </head>
 <body>
-<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
-
     {% set active = active|default(null) %}
-    <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="brand" href="{{ path('homepage') }}">{{ 'Silex Kitchen Sink Edition'|trans }}</a>
-                <div class="nav-collapse">
-                    <ul class="nav">
-                        <li {% if 'homepage' == active %}class="active"{% endif %}><a href="{{ path('homepage') }}">{{ 'Homepage'|trans }}</a></li>
-                        <li class="dropdown{% if 'account' == active %} active{% endif %}">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                Account <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                {% if is_granted('ROLE_USER') %}
-                                    <li><a href="{{ path('logout') }}">{{ 'Logout'|trans }}</a></li>
-                                {% else %}
-                                    <li><a href="{{ path('login') }}">{{ 'Login'|trans }}</a></li>
-                                    <li><a href="#">{{ 'Register'|trans }}</a></li>
-                                {% endif %}
-                            </ul>
-                        </li>
-                    </ul>
-                </div><!--/.nav-collapse -->
+    <div class="ui teal inverted menu">
+        <a href="{{ path('homepage') }}" class="{% if 'homepage' == active %}active {% endif %}item">
+            <i class="home icon"></i> {{ 'Homepage'|trans }}
+        </a>
+        <div class="{% if 'account' == active %} active{% endif %}ui dropdown item">
+            <i class="icon user"></i> Account <i class="dropdown icon"></i>
+            <div class="menu">
+                {% if is_granted('ROLE_USER') %}
+                    <a href="{{ path('logout') }}" class="item">Choice 1</a>
+                {% else %}
+                    <a href="{{ path('login') }}" class="item">{{ 'Login'|trans }}</a>
+                    <a href="#" class="item">{{ 'Register'|trans }}</a>
+                {% endif %}
             </div>
         </div>
+        <a class="item">
+            <i class="mail icon"></i> Messages
+        </a>
+        <a class="item">
+            <i class="user icon"></i> Friends
+        </a>
     </div>
 
     <div class="container">
@@ -65,7 +60,9 @@
     </div>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="{{ app.request.basepath }}/js/libs/jquery-1.7.2.min.js"><\/script>')</script>
-    <script src="{{ app.request.basepath }}/assets/js/scripts.js"></script>
+    <script>window.jQuery || document.write('<script src="{{ app.request.basepath }}/assets/libs/jquery-1.7.2.min.js"><\/script>')</script>
+    <script src="{{ app.request.basepath }}/assets/javascript/semantic.min.js"></script>
+
+    <script src="{{ app.request.basepath }}/assets/javascript/script.js"></script>
 </body>
 </html>

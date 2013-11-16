@@ -39,105 +39,94 @@ class __TwigTemplate_41aab348ae9beb4dc5535757b0ef95e6d413df314a435f219f2ad8ccc5a
     <link rel=\"stylesheet\" href=\"";
         // line 17
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getContext($context, "app"), "request"), "basepath"), "html", null, true);
-        echo "/assets/css/styles.css\">
-
-    <script src=\"";
-        // line 19
+        echo "/assets/css/semantic.min.css\">
+    <link rel=\"stylesheet\" href=\"";
+        // line 18
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getContext($context, "app"), "request"), "basepath"), "html", null, true);
-        echo "/js/libs/modernizr-2.5.3-respond-1.1.0.min.js\"></script>
+        echo "/assets/css/main.css\">
+
 </head>
 <body>
-<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href=\"http://browsehappy.com/\">Upgrade to a different browser</a> or <a href=\"http://www.google.com/chromeframe/?redirect=true\">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
-
     ";
-        // line 24
+        // line 22
         $context["active"] = ((array_key_exists("active", $context)) ? (_twig_default_filter($this->getContext($context, "active"), null)) : (null));
-        // line 25
-        echo "    <div class=\"navbar navbar-fixed-top\">
-        <div class=\"navbar-inner\">
-            <div class=\"container\">
-                <a class=\"brand\" href=\"";
-        // line 28
+        // line 23
+        echo "    <div class=\"ui teal inverted menu\">
+        <a href=\"";
+        // line 24
         echo $this->env->getExtension('routing')->getPath("homepage");
-        echo "\">";
-        echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Silex Kitchen Sink Edition"), "html", null, true);
-        echo "</a>
-                <div class=\"nav-collapse\">
-                    <ul class=\"nav\">
-                        <li ";
-        // line 31
+        echo "\" class=\"";
         if (("homepage" == $this->getContext($context, "active"))) {
-            echo "class=\"active\"";
+            echo "active ";
         }
-        echo "><a href=\"";
-        echo $this->env->getExtension('routing')->getPath("homepage");
-        echo "\">";
+        echo "item\">
+            <i class=\"home icon\"></i> ";
+        // line 25
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Homepage"), "html", null, true);
-        echo "</a></li>
-                        <li class=\"dropdown";
-        // line 32
+        echo "
+        </a>
+        <div class=\"";
+        // line 27
         if (("account" == $this->getContext($context, "active"))) {
             echo " active";
         }
-        echo "\">
-                            <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">
-                                Account <b class=\"caret\"></b>
-                            </a>
-                            <ul class=\"dropdown-menu\">
-                                ";
-        // line 37
+        echo "ui dropdown item\">
+            <i class=\"icon user\"></i> Account <i class=\"dropdown icon\"></i>
+            <div class=\"menu\">
+                ";
+        // line 30
         if ($this->env->getExtension('security')->isGranted("ROLE_USER")) {
-            // line 38
-            echo "                                    <li><a href=\"";
+            // line 31
+            echo "                    <a href=\"";
             echo $this->env->getExtension('routing')->getPath("logout");
-            echo "\">";
-            echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Logout"), "html", null, true);
-            echo "</a></li>
-                                ";
+            echo "\" class=\"item\">Choice 1</a>
+                ";
         } else {
-            // line 40
-            echo "                                    <li><a href=\"";
+            // line 33
+            echo "                    <a href=\"";
             echo $this->env->getExtension('routing')->getPath("login");
-            echo "\">";
+            echo "\" class=\"item\">";
             echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Login"), "html", null, true);
-            echo "</a></li>
-                                    <li><a href=\"#\">";
-            // line 41
+            echo "</a>
+                    <a href=\"#\" class=\"item\">";
+            // line 34
             echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Register"), "html", null, true);
-            echo "</a></li>
-                                ";
+            echo "</a>
+                ";
         }
-        // line 43
-        echo "                            </ul>
-                        </li>
-                    </ul>
-                </div><!--/.nav-collapse -->
-            </div>
+        // line 36
+        echo "            </div>
         </div>
+        <a class=\"item\">
+            <i class=\"mail icon\"></i> Messages
+        </a>
+        <a class=\"item\">
+            <i class=\"user icon\"></i> Friends
+        </a>
     </div>
 
     <div class=\"container\">
         <div id=\"main\" role=\"main\" class=\"container\">
             ";
-        // line 53
+        // line 48
         $context["alertTypeAvaillable"] = array(0 => "info", 1 => "success", 2 => "warning", 3 => "error");
-        // line 54
+        // line 49
         echo "            ";
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($this->getContext($context, "alertTypeAvaillable"));
         foreach ($context['_seq'] as $context["_key"] => $context["alert"]) {
-            // line 55
+            // line 50
             echo "                ";
             $context['_parent'] = (array) $context;
             $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute($this->getContext($context, "app"), "session"), "getFlashBag"), "get", array(0 => $this->getContext($context, "alert")), "method"));
             foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-                // line 56
+                // line 51
                 echo "                    <div class=\"alert alert-";
                 echo twig_escape_filter($this->env, $this->getContext($context, "alert"), "html", null, true);
                 echo "\" >
                         <button class=\"close\" data-dismiss=\"alert\">×</button>
                         ";
-                // line 58
+                // line 53
                 echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans($this->getContext($context, "message")), "html", null, true);
                 echo "
                     </div>
@@ -146,37 +135,42 @@ class __TwigTemplate_41aab348ae9beb4dc5535757b0ef95e6d413df314a435f219f2ad8ccc5a
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 61
+            // line 56
             echo "            ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['alert'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 62
+        // line 57
         echo "            ";
         $this->displayBlock('content', $context, $blocks);
-        // line 64
+        // line 59
         echo "        </div>
     </div>
 
     <script src=\"//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js\"></script>
     <script>window.jQuery || document.write('<script src=\"";
-        // line 68
+        // line 63
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getContext($context, "app"), "request"), "basepath"), "html", null, true);
-        echo "/js/libs/jquery-1.7.2.min.js\"><\\/script>')</script>
+        echo "/assets/libs/jquery-1.7.2.min.js\"><\\/script>')</script>
     <script src=\"";
-        // line 69
+        // line 64
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getContext($context, "app"), "request"), "basepath"), "html", null, true);
-        echo "/assets/js/scripts.js\"></script>
+        echo "/assets/javascript/semantic.min.js\"></script>
+
+    <script src=\"";
+        // line 66
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getContext($context, "app"), "request"), "basepath"), "html", null, true);
+        echo "/assets/javascript/script.js\"></script>
 </body>
 </html>
 ";
     }
 
-    // line 62
+    // line 57
     public function block_content($context, array $blocks = array())
     {
-        // line 63
+        // line 58
         echo "            ";
     }
 
@@ -192,6 +186,6 @@ class __TwigTemplate_41aab348ae9beb4dc5535757b0ef95e6d413df314a435f219f2ad8ccc5a
 
     public function getDebugInfo()
     {
-        return array (  180 => 63,  177 => 62,  169 => 69,  165 => 68,  159 => 64,  156 => 62,  150 => 61,  141 => 58,  135 => 56,  130 => 55,  125 => 54,  123 => 53,  111 => 43,  106 => 41,  99 => 40,  91 => 38,  89 => 37,  79 => 32,  69 => 31,  61 => 28,  56 => 25,  54 => 24,  46 => 19,  41 => 17,  31 => 10,  20 => 1,);
+        return array (  174 => 58,  171 => 57,  163 => 66,  158 => 64,  154 => 63,  148 => 59,  145 => 57,  139 => 56,  130 => 53,  124 => 51,  119 => 50,  114 => 49,  112 => 48,  98 => 36,  93 => 34,  86 => 33,  80 => 31,  78 => 30,  70 => 27,  65 => 25,  57 => 24,  54 => 23,  52 => 22,  45 => 18,  41 => 17,  31 => 10,  20 => 1,);
     }
 }

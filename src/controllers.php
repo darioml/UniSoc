@@ -15,7 +15,10 @@ $app->match('/', function() use ($app) {
 })->bind('homepage');
 
 
-
+$app->match('/hello', function() use($app) {
+    return $app['twig']->render('test.html.twig', array(
+    ));;
+});
 
 
 
