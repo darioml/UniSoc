@@ -1,5 +1,7 @@
 <?php
 
+date_default_timezone_set('gmt');
+
 // Local
 $app['locale'] = 'fr';
 $app['session.default_locale'] = $app['locale'];
