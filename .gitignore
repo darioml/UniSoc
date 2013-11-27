@@ -3,6 +3,6 @@ composer.phar
 resources/cache/
 .htaccess
 resources/log/
+.DS_Store
 *.DS_Store
-
 resources/config/environment.php
