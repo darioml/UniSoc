@@ -1,0 +1,10 @@
+<?php
+
+// Doctrine (db)
+$app['db.options'] = array(
+    'driver'   => 'pdo_mysql',
+    'host'     => 'localhost',
+    'dbname'   => 'unisoc_main',
+    'user'     => 'root',
+    'password' => '1q2w3e',
+);

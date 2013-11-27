@@ -5,3 +5,4 @@ resources/cache/
 resources/log/
 *.DS_Store
 
+resources/config/environment.php
