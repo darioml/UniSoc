@@ -11,6 +11,12 @@ $app->match('/', function() use ($app) {
     $app['session']->getFlashBag()->add('success', 'Success flash message');
     $app['session']->getFlashBag()->add('error', 'Error flash message');*/
 
+    $imperial = new UniSoc\Model\University($app, "1");
+
+    var_dump($imperial->getSocs());
+
+
+
     return $app['twig']->render('index.html.twig');
 })->bind('homepage');
 
