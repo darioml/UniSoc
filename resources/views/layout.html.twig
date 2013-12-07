@@ -24,7 +24,7 @@
         <a href="{{ path('homepage') }}" class="{% if 'homepage' == active %}active {% endif %}item">
             <i class="home icon"></i> {{ 'Homepage'|trans }}
         </a>
-        <div class="{% if 'account' == active %} active{% endif %}ui dropdown item">
+        <div class="{% if 'account' == active %}active {% endif %}ui dropdown item">
             <i class="icon user"></i> Account <i class="dropdown icon"></i>
             <div class="menu">
                 {% if is_granted('ROLE_USER') %}

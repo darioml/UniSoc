@@ -19,7 +19,7 @@ $app['cache.path'] = __DIR__ . '/../cache';
 $app['http_cache.cache_dir'] = $app['cache.path'] . '/http';
 
 // Twig cache
-$app['twig.options.cache'] = $app['cache.path'] . '/twig';
+$app['twig.options.cache'] = false; //$app['cache.path'] . '/twig';
 
 // User
 $app['security.users'] = array('username' => array('ROLE_USER', 'password'));
