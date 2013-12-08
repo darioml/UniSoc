@@ -1685,7 +1685,7 @@ table {
   padding: 8px;
   line-height: 20px;
   text-align: left;
-  vertical-align: top;
+  vertical-align: middle;
   border-top: 1px solid #ddd;
 }
 .table th {
@@ -5194,5 +5194,5 @@ a.badge:focus {
   position: fixed;
 }
 body {
-  padding-top: 60px;
+  padding-top: 30px;
 }

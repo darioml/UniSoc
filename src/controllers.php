@@ -13,7 +13,7 @@ $app->match('/', function() use ($app) {
 
     $imperial = new UniSoc\Model\University($app, "1");
 
-    var_dump($imperial->getSocs());
+   // var_dump($imperial->getSocs());
 
 
 
@@ -22,13 +22,19 @@ $app->match('/', function() use ($app) {
 
 
 $app->match('/hello', function() use($app) {
-    return $app['twig']->render('test.html.twig', array(
+	 return $app['twig']->render('test.html.twig', array( 
     ));;
 });
 
 
 
-
+$app->match('/ImperialCollege', function() use($app) {
+	$imperial = new UniSoc\Model\University($app, "1");
+	$societies = $imperial->getSocs();
+	//var_dump($societies);
+	return $app['twig']->render('societies.html.twig', array( 'societies' => $societies,
+    ));;
+});
 
 $app->match('/login', function(Request $request) use ($app) {
     $form = $app['form.factory']->createBuilder('form')
@@ -43,6 +49,12 @@ $app->match('/login', function(Request $request) use ($app) {
     ));
 })->bind('login');
 
+$app->match('/register', function() use($app) {
+
+	//var_dump($societies);
+	return $app['twig']->render('register.html.twig', array( 
+    ));;
+})->bind('register');
 
 $app->match('/logout', function() use ($app) {
     $app['session']->clear();

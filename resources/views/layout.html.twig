@@ -16,7 +16,7 @@
 
     <link rel="stylesheet" href="{{ app.request.basepath }}/assets/css/semantic.min.css">
     <link rel="stylesheet" href="{{ app.request.basepath }}/assets/css/main.css">
-
+	<link rel="stylesheet" href="{{ app.request.basepath }}/assets/css/styles.css">
 </head>
 <body>
     {% set active = active|default(null) %}
@@ -31,7 +31,7 @@
                     <a href="{{ path('logout') }}" class="item">Choice 1</a>
                 {% else %}
                     <a href="{{ path('login') }}" class="item">{{ 'Login'|trans }}</a>
-                    <a href="#" class="item">{{ 'Register'|trans }}</a>
+                    <a href="{{ path('register') }}" class="item">{{ 'Register'|trans }}</a>
                 {% endif %}
             </div>
         </div>
