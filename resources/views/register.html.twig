@@ -17,7 +17,8 @@
 				Complete
 			  </div>
 		</div>
-		 <div class="ui fluid form segment " id="register-form">
+		<form action="{{ path(app.request.attributes.get('_route')) }}" method="POST">
+			<div class="ui fluid form segment " id="register-form">
 			  <h3 class="ui header">Register</h3>
 			  <div class="two fields">
 				<div class="field">
@@ -44,8 +45,37 @@
 				</div>
 				<label>I agree to the terms and conditions</label>
 			  </div>
-			  <a href="{{ path('register2')}}"><div class="ui blue submit button">Submit</div></a>
+			  {% if error %}
+			    <div class="ui red message">{{error}}</div>
+  			  {% endif %}
+			  <div class="ui blue submit button">Submit</div>
+			  <div style="display: none;"><input id="submitFormButton" type="submit"></div>
 			</div>
+		</form>
 	
 	</div>		
+{% endblock %}
+
+
+{% block pagejs %}
+<script>
+        $('.ui.form')
+          .form({
+            email: {
+              identifier  : 'email',
+              rules: [
+                {
+                  type   : 'email',
+                  prompt : 'Please enter a valid email'
+                }
+              ]
+            }
+          }, {
+            inline: true,
+            onSuccess: function() {
+                $("#submitFormButton").trigger('click');
+            }
+          })
+        ;
+</script>
 {% endblock %}

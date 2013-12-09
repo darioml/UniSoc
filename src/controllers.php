@@ -50,9 +50,17 @@ $app->match('/login', function(Request $request) use ($app) {
 })->bind('login');
 
 $app->match('/register', function() use($app) {
+  if ($app['request']->getMethod() == "POST") {
+    if ($app['db']->insert('user', array('col'=>'something')))
+    {
+      $app['session']->set('user', array('username' => $username));
+      return $app->redirect('/register/step2');
+    }
+    $error = "Username is in use";
+    
+  }
 
-
-	return $app['twig']->render('register.html.twig', array( 
+	return $app['twig']->render('register.html.twig', array('error' => @$error
     ));;
 })->bind('register');
 
