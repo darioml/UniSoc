@@ -13,3 +13,12 @@ $(".item.exec-members-select").click(function(){
   	}
 });
 
+
+$('#select-exec-members-list-next-button').click(function ()
+{
+	var arrayOfIds = $.map($(".item.exec-members-select.selected"), function(n, i){
+  return n.id;
+});
+alert(arrayOfIds);
+});
+
