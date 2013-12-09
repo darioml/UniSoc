@@ -1,0 +1,58 @@
+body {
+
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #333;
+  background-color: #fff;
+  }
+  
+#register-form {
+	max-width: 761px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#register-steps {
+	width: 761px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+#sign-in-with-facebook-button {
+max-width: 280px;
+margin-left: auto;
+margin-right: auto;
+display: block;
+}
+
+.item.selected {
+
+
+}
+
+
+.ui.steps .step.active:after, .ui.active.steps:after {
+border-left-color: #00B5AD;
+}
+
+.ui.steps .step.active, .ui.active.step {
+cursor: auto;
+background-color: #00B5AD;
+color: #FFF;
+font-weight: 700;
+}
+
+.ui.selection.list .item:hover , .ui.selection.list .item:active {
+background-color: rgba(0, 181, 173, 0.57);
+color: rgba(255, 255, 255, 1);
+}
+.ui.selection.list .item.selected {
+background-color: #00B5AD;
+color: rgba(255, 255, 255, 1);
+}
+
+#select-exec-members-list {
+padding-top: 10px;
+}

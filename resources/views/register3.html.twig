@@ -1,0 +1,40 @@
+{% extends 'layout.html.twig' %}
+{% set active = 'account' %}
+
+{% block content %}
+ <div class="ui segment" >
+		<div class="ui large steps teal" id="register-steps">
+			  <div class="ui step" >
+				Register
+			  </div>
+			  <div class="ui step">
+				Create Soc
+			  </div>
+			  <div class="ui active step">
+				Add Members
+			  </div>
+			  <div class="ui disabled step">
+				Complete
+			  </div>
+		</div>
+		 <div class="ui segment " id="register-form">
+			  <h3 class="ui header">Set Up Your Society</h3>
+			
+				<a href="{{login_url}}"><div class="ui facebook button hover " id="sign-in-with-facebook-button" ><i class="facebook icon"></i>Sign in with facebook</div></a>
+			   <table class="ui table segment">
+        <thead><tr>
+        <th>Group Name</th>
+        <th>Group ID</th>
+        <th>Select</th>
+        </tr></thead>
+        <tbody>
+        {% if user_groups %}
+        {% for group in user_groups.data %}
+            <tr><td>{{group.name}}</td><td>{{group.id}}</td><td><a href="{{path('register3')}}/{{group.id}}"><div class="small ui teal button">Select</div></a></td></tr>
+        {% endfor %}
+        {% endif %}
+        </tbody>
+        </table>
+			</div>
+	</div>		
+{% endblock %}

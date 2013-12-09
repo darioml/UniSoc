@@ -1,0 +1,53 @@
+{% extends 'layout.html.twig' %}
+{% set active = 'account' %}
+
+{% block content %}
+ <div class="ui segment">
+		<div class="ui large steps" id="register-steps">
+			  <div class="ui step" >
+				Register
+			  </div>
+			  <div class="ui active step">
+				Create Soc
+			  </div>
+			  <div class="ui disabled step">
+				Add Members
+			  </div>
+			  <div class="ui disabled step">
+				Complete
+			  </div>
+		</div>
+		 <div class="ui fluid form segment " id="register-form">
+			  <h3 class="ui header">Set Up Your Society</h3>
+				<div class="field">
+				  <label>Society Name</label>
+				  <input placeholder="Society Name" type="text">
+				</div>
+			  <div class="field">
+				<label>University</label>
+				<input placeholder="University" type="text">
+			  </div>
+			  <div class="ui selection dropdown field">
+				  <input type="hidden" name="society type">
+				  <div class="text">Society Type</div>
+				  <i class="dropdown icon"></i>
+				  <div class="menu">
+					<div class="item" data-value="1">Sports</div>
+					<div class="item " data-value="2">Group Project</div>
+					<div class="item " data-value="3">Dance</div>
+					<div class="item " data-value="4">Random</div>
+					<div class="item " data-value="5">Other</div>
+				  </div>
+				</div>
+			  <div class="inline field segment">
+				<div class="ui checkbox">
+				  <input type="checkbox" id="terms">
+				  <label for="terms"></label>
+				</div>
+				<label>I want to receive notification about this Society</label>
+			  </div>
+			   <a href="{{ path('register3')}}"><div class="ui blue submit button">Submit</div></a>
+			</div>
+	
+	</div>		
+{% endblock %}

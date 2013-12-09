@@ -2,17 +2,20 @@
 {% set active = 'account' %}
 
 {% block content %}
- <table class="table">
-        <tr>
+ <table class="ui table segment">
+        <thead><tr>
         <th>Name</th>
         <th>SID</th>
         <th>Homepage</th>
         <th>Manage</th>
-        </tr>
+        </tr></thead>
+        <tbody>
         {% for item in societies %}
             <tr><td>{{item.name}}</td><td>{{item.sid}}</td><td>{{item.homepage}}</td><td><div class="small ui button">Manage</div></td></tr>
         {% endfor %}
+        </tbody>
         </table>
  
-</div>
+
+
 {% endblock %}

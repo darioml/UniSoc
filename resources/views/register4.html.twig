@@ -1,0 +1,54 @@
+{% extends 'layout.html.twig' %}
+{% set active = 'account' %}
+
+{% block content %}
+ <div class="ui segment" >
+		<div class="ui large steps teal" id="register-steps">
+			  <div class="ui disabled step" >
+				Register
+			  </div>
+			  <div class="ui disabled step">
+				Create Soc
+			  </div>
+			  <div class="ui active step">
+				Add Members
+			  </div>
+			  <div class="ui disabled step">
+				Complete
+			  </div>
+		</div>
+		 <div class="ui segment " id="register-form">
+			  
+			<div class="ui three column grid">
+  				<div class="column">
+			  		<h3 class="ui header">Select Exec Members</h3>
+				</div>
+				<div class="column search-box">
+				<div class="ui input">
+  				<input type="text" placeholder="Search...">
+				</div>
+				</div>
+				<div class="column">
+					<div class="ui right floated animated small teal button">
+					  <div class="visible content">Next</div>
+					  <div class="hidden content">
+						<i class="right arrow icon"></i>
+					  </div>
+					</div>
+				</div>
+			</div>	
+	<div class="ui  selection horizontal list" id="select-exec-members-list">
+        {% if group_members_data %}
+        {% for member in group_members_data %}
+		
+		  <div class="item exec-members-select" id="{{member.id}}">
+			<img class="ui avatar image" src="{{member.pic_square}}">
+			<div class="content">
+			  <div class="header">{{member.name}}</div></div>
+		  </div>
+		
+        {% endfor %}
+        {% endif %}
+			</div>
+	</div>		
+{% endblock %}
