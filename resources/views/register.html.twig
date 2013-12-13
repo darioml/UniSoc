@@ -17,65 +17,12 @@
 				Complete
 			  </div>
 		</div>
-		<form action="{{ path(app.request.attributes.get('_route')) }}" method="POST">
-			<div class="ui fluid form segment " id="register-form">
-			  <h3 class="ui header">Register</h3>
-			  <div class="two fields">
-				<div class="field">
-				  <label>First Name</label>
-				  <input placeholder="First Name" type="text">
-				</div>
-				<div class="field">
-				  <label>Last Name</label>
-				  <input placeholder="Last Name" type="text">
-				</div>
-			  </div>
-			  <div class="field">
-				<label>Username</label>
-				<input placeholder="Username" type="text">
-			  </div>
-			  <div class="field">
-				<label>Password</label>
-				<input type="password">
-			  </div>
-			  <div class="inline field">
-				<div class="ui checkbox">
-				  <input type="checkbox" id="terms">
-				  <label for="terms"></label>
-				</div>
-				<label>I agree to the terms and conditions</label>
-			  </div>
-			  {% if error %}
-			    <div class="ui red message">{{error}}</div>
-  			  {% endif %}
-			  <div class="ui blue submit button">Submit</div>
-			  <div style="display: none;"><input id="submitFormButton" type="submit"></div>
-			</div>
-		</form>
-	
+
+						<div style="min-height:300px;" class="ui fluid form segment " id="register-form">
+						<a href="{{path('register-fblogin')}}"><div class="ui facebook button hover " id="sign-in-with-facebook-button" ><i class="facebook icon"></i>Sign in with facebook</div></a>
+						</div>
+		
 	</div>		
 {% endblock %}
 
 
-{% block pagejs %}
-<script>
-        $('.ui.form')
-          .form({
-            email: {
-              identifier  : 'email',
-              rules: [
-                {
-                  type   : 'email',
-                  prompt : 'Please enter a valid email'
-                }
-              ]
-            }
-          }, {
-            inline: true,
-            onSuccess: function() {
-                $("#submitFormButton").trigger('click');
-            }
-          })
-        ;
-</script>
-{% endblock %}

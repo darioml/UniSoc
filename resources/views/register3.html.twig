@@ -19,8 +19,10 @@
 		</div>
 		 <div class="ui segment " id="register-form">
 			  <h3 class="ui header">Set Up Your Society</h3>
-			
+				
+				{% if login_url %}
 				<a href="{{login_url}}"><div class="ui facebook button hover " id="sign-in-with-facebook-button" ><i class="facebook icon"></i>Sign in with facebook</div></a>
+			   	{% endif %}
 			   <table class="ui table segment">
         <thead><tr>
         <th>Group Name</th>

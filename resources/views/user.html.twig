@@ -1,0 +1,28 @@
+{% extends 'layout.html.twig' %}
+{% set active = 'account' %}
+
+{% block content %}
+ <div class="ui segment" >
+		
+		 <div class="ui segment" id='societies-pane'>
+			 <h3 class="ui header">Your Societies</h3>
+			
+			<div class="ui items">
+			  {% for Society in Societies %}
+			  <a href="/unisoc/web/society/{{Society.sid}}"><div class="item">
+				<div class="content">
+				  <div class="meta">{{Society.sid}}</div>
+				  <div class="name">{{Society.name}}</div>
+				  <p class="description"><a href="//{{Society.homepage}}" style="margin-top:10px;"class="ui teal button small">Vist the {{Society.name}} website.</a></p>
+				</div>
+				<div class="extra">
+					N/A
+				</div>
+			  </div></a>
+			  {% endfor %}
+			</div>
+		
+		</div>
+ </div>		
+
+{% endblock %}

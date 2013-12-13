@@ -1,0 +1,27 @@
+{% extends 'layout.html.twig' %}
+{% set active = 'account' %}
+
+{% block content %}
+ <div class="ui segment" >
+		<div class="ui large steps teal" id="register-steps">
+			  <div class="ui disabled step" >
+				Register
+			  </div>
+			  <div class="ui disabled step">
+				Create Soc
+			  </div>
+			  <div class="ui disabled step">
+				Add Members
+			  </div>
+			  <div class="ui active step">
+				Complete
+			  </div>
+		</div>
+		 <div class="ui segment" id="register-form">
+			 <p>You have succesfully cerated your society! Wooo! UID = {{uid}}</p> 
+			 <a href="/unisoc/web/user/{{uid}}" class="ui teal button">Get Started</a>
+		
+		</div>
+ </div>		
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'layout.html.twig' %}
+{% set active = 'account' %}
+
+{% block content %}
+ <table class="ui table segment">
+        <thead><tr>
+        <th>Name</th>
+        <th>ID</th>
+        <th>Edit</th>
+        </tr></thead>
+        <tbody>
+        
+        {% for item in members %}
+            <tr><td>{{item.uid}}</td><td>{{item.uid}}</td><td><div class="small ui button">Edit</div></td></tr>
+        {% endfor %}
+     
+        </tbody>
+        </table>
+ 
+
+
+{% endblock %}

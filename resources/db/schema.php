@@ -7,7 +7,7 @@
 $schema = new \Doctrine\DBAL\Schema\Schema();
 
 $users = $schema->createTable('users');
-$users->addColumn('uid', 'integer', array('unsigned' => true, 'autoincrement' => true));
+$users->addColumn('uid', 'string', array('unsigned' => true, 'autoincrement' => true , 'length' => 255));
 $users->addColumn('email', 'string', array('length' => 255));
 $users->addColumn('firstName', 'string', array('length' => 255));
 $users->addColumn('lastName', 'string', array('length' => 255));
@@ -36,7 +36,7 @@ $college->setPrimaryKey(array('cid'));
 
 
 $relationship = $schema->createTable('relationship');
-$relationship->addColumn('uid', 'integer', array('unsigned' => true));
+$relationship->addColumn('uid', 'string', array('unsigned' => true, 'length' => 255));
 $relationship->addColumn('sid', 'integer', array('unsigned' => true));
 $relationship->addColumn('permissions', 'integer');
 
